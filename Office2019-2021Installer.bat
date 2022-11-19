@@ -1,10 +1,13 @@
 @echo off
-fltmc>nul
+fltmc > nul
 if "%errorlevel%" NEQ "0" (goto UACPrompt) else (goto UACAdmin)
 :UACPrompt
-%1 start "" mshta vbscript:createobject("shell.application").shellexecute("""%~0""","::",,"runas",1)(window.close)&exit
+start mshta vbscript:createobject("shell.application").shellexecute("%~0","%~1 %~2 %~3 %~4 %~5 %~6 %~7 %~8 %~9",,"runas",1)(window.close)&exit
 exit /B
 :UACAdmin
+
+set CurrentPath=%~dp0
+cd /d %CurrentPath%
 
 title Office 2019/2021 ProPlus MAK edition installer
 
@@ -215,8 +218,6 @@ goto:eof
 
 @REM main 
 :main
-set CurrentPath=%~dp0
-cd /d %CurrentPath%
 set setupPath=%CurrentPath%office_setup
 
 
@@ -264,5 +265,5 @@ if "%user_choice%"=="23" (
 ) else (
     echo Install successfully, press any key to exit.
 )
-pause 
+pause
 exit /B
