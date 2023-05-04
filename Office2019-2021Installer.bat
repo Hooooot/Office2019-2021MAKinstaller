@@ -7,7 +7,7 @@ exit /B
 :UACAdmin
 
 set CurrentPath=%~dp0
-cd /d %CurrentPath%
+cd /d "%CurrentPath%"
 
 title Office 2019/2021 ProPlus MAK edition installer
 
@@ -218,13 +218,14 @@ goto:eof
 
 @REM main 
 :main
-set setupPath=%CurrentPath%office_setup
+set extractFolder=office_setup
+set setupPath="%CurrentPath%%extractFolder%"
 
 
 if not exist %setupPath% ( 
     @REM https://www.microsoft.com/en-us/download/details.aspx?id=49117
     echo Downloading deployment tool, please waiting...^(around 5 MiB^)
-    call :release_deployment_tool %setupPath%
+    call :release_deployment_tool %extractFolder%
 )
 if not exist %setupPath% (
     echo Download failed.
