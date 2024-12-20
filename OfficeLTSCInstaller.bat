@@ -16,7 +16,7 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 # Write-Host $ScriptFullPath
 # Write-Host $ScriptPath
 # Write-Host $ScriptName
-# Write-Output $args
+# Write-Host $args
 
 function GetLanguageString($stringID) {
     if ((Get-Culture).LCID -eq 2052) { # GBK
