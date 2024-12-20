@@ -16,27 +16,26 @@ $PSDefaultParameterValues['*:Encoding'] = 'utf8'
 # Write-Host $ScriptFullPath
 # Write-Host $ScriptPath
 # Write-Host $ScriptName
-# Write-Host $Path
 # Write-Output $args
 
 function GetLanguageString($stringID) {
     if ((Get-Culture).LCID -eq 2052) { # GBK
         switch ($stringID) {
-            "inputOfficeVersion" { "ÇëÑ¡ÔñĞèÒª°²×°µÄOffice°æ±¾ĞòºÅ" }
-            "officeVersionIndexList" { "ĞòºÅ                °æ±¾" }
-            "appInstallListHeader" {"ĞòºÅ           Ãû³Æ                    °²×°"}
-            "Yes" { "ÊÇ" }
-            "No" { "·ñ" }
-            "StartInstall" { "¿ªÊ¼°²×°" }
-            "InputFunctionIndex" { "ÇëÊäÈëÒªÑ¡ÔñµÄ¹¦ÄÜĞòºÅ" }
-            "invalidIndex" { "ÎŞĞ§µÄĞòºÅ!" }
-            "invalidInput" { "ÎŞĞ§ÊäÈë£º" }
-            "getExeUrl" { "ÕıÔÚ»ñÈ¡Setup.exeÁ´½Ó......" }
-            "showExeUrl" { "Setup.exeÁ´½Ó£º" }
-            "downloadExe" { "ÕıÔÚÏÂÔØSetup.exe£¨´óÔ¼4MiB£©" }
-            "downloadingOffice" { "ÕıÔÚÏÂÔØOffice..." }
-            "installingOffice" { "ÕıÔÚ°²×°Office..." }
-            "defaultStr" { "£¨Ä¬ÈÏ£©" }
+            "inputOfficeVersion" { "è¯·é€‰æ‹©éœ€è¦å®‰è£…çš„Officeç‰ˆæœ¬åºå·" }
+            "officeVersionIndexList" { "åºå·                ç‰ˆæœ¬" }
+            "appInstallListHeader" {"åºå·           åç§°                    å®‰è£…"}
+            "Yes" { "æ˜¯" }
+            "No" { "å¦" }
+            "StartInstall" { "å¼€å§‹å®‰è£…" }
+            "InputFunctionIndex" { "è¯·è¾“å…¥è¦é€‰æ‹©çš„åŠŸèƒ½åºå·" }
+            "invalidIndex" { "æ— æ•ˆçš„åºå·!" }
+            "invalidInput" { "æ— æ•ˆè¾“å…¥ï¼š" }
+            "getExeUrl" { "æ­£åœ¨è·å–Setup.exeé“¾æ¥......" }
+            "showExeUrl" { "Setup.exeé“¾æ¥ï¼š" }
+            "downloadExe" { "æ­£åœ¨ä¸‹è½½Setup.exeï¼ˆå¤§çº¦4MiBï¼‰" }
+            "downloadingOffice" { "æ­£åœ¨ä¸‹è½½Office..." }
+            "installingOffice" { "æ­£åœ¨å®‰è£…Office..." }
+            "defaultStr" { "ï¼ˆé»˜è®¤ï¼‰" }
             Default { "Invalid language string!" }
         }
     } else {
